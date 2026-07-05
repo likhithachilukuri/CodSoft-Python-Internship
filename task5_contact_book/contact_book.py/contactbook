@@ -1,0 +1,89 @@
+# Contact Book using Python
+
+contacts = {}
+
+while True:
+    print("\n" + "=" * 40)
+    print("         CONTACT BOOK")
+    print("=" * 40)
+    print("1. Add Contact")
+    print("2. View All Contacts")
+    print("3. Search Contact")
+    print("4. Update Contact")
+    print("5. Delete Contact")
+    print("6. Exit")
+
+    choice = input("\nEnter your choice (1-6): ")
+
+    if choice == "1":
+        name = input("Enter Name: ")
+
+        if name in contacts:
+            print("Contact already exists!")
+        else:
+            phone = input("Enter Phone Number: ")
+            email = input("Enter Email: ")
+            address = input("Enter Address: ")
+
+            contacts[name] = {
+                "Phone": phone,
+                "Email": email,
+                "Address": address
+            }
+
+            print("\n✅ Contact added successfully!")
+
+    elif choice == "2":
+        if len(contacts) == 0:
+            print("\nNo contacts found.")
+        else:
+            print("\n------ Contact List ------")
+            for name, details in contacts.items():
+                print(f"\nName    : {name}")
+                print(f"Phone   : {details['Phone']}")
+                print(f"Email   : {details['Email']}")
+                print(f"Address : {details['Address']}")
+
+    elif choice == "3":
+        search = input("Enter contact name to search: ")
+
+        if search in contacts:
+            print("\nContact Found")
+            print(f"Name    : {search}")
+            print(f"Phone   : {contacts[search]['Phone']}")
+            print(f"Email   : {contacts[search]['Email']}")
+            print(f"Address : {contacts[search]['Address']}")
+        else:
+            print("Contact not found.")
+
+    elif choice == "4":
+        update = input("Enter contact name to update: ")
+
+        if update in contacts:
+            phone = input("Enter New Phone Number: ")
+            email = input("Enter New Email: ")
+            address = input("Enter New Address: ")
+
+            contacts[update]["Phone"] = phone
+            contacts[update]["Email"] = email
+            contacts[update]["Address"] = address
+
+            print("✅ Contact updated successfully!")
+        else:
+            print("Contact not found.")
+
+    elif choice == "5":
+        delete = input("Enter contact name to delete: ")
+
+        if delete in contacts:
+            del contacts[delete]
+            print("✅ Contact deleted successfully!")
+        else:
+            print("Contact not found.")
+
+    elif choice == "6":
+        print("\nThank you for using Contact Book!")
+        break
+
+    else:
+        print("❌ Invalid choice! Please enter a number between 1 and 6.")

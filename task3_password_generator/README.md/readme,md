@@ -1,0 +1,27 @@
+# Password Generator
+
+## Description
+This project is a Password Generator developed using Python. It generates strong and random passwords based on the length entered by the user.
+
+## Features
+- Generates random passwords
+- User can choose the password length
+- Uses uppercase letters, lowercase letters, numbers, and special characters
+- Simple command-line interface
+
+## Technologies Used
+- Python
+- Visual Studio Code
+
+## How to Run
+
+1. Open the project in VS Code.
+2. Open the terminal.
+3. Run:
+
+```bash
+python password_generator.py
+```
+
+## Author
+Likhitha Chow
