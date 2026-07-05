@@ -16,4 +16,4 @@ This repository contains the Python projects completed as part of my CodSoft Pyt
 
 ## Author
 
-Likhitha Chow
+Likhitha Chilukuri
